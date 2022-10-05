@@ -13,7 +13,7 @@ public class TestBanking {
 					c.getLastName());
 			Account a = new Account(500);
 			c.setAccount(a);
-			System.out.printf("Creando su cuenta bancario con saldo %f . %n", 
+			System.out.printf("Creando su cuenta bancario con saldo %.2f . %n", 
 					a.getBalance());
 			double retirar = 150;
 			double ingresar = 22.50;
