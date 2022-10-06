@@ -7,6 +7,7 @@ public class Refresco {
 	double precio = 0;
 	boolean agotado;
 	int stock = 0;
+	int ventasRefresco;
 	//constructor
 	public Refresco(String sabor, int cl, double precio, int stock) {
 		super();
@@ -39,6 +40,14 @@ public class Refresco {
 	}
 	public boolean isAgotado() {
 		return agotado;
+	}
+
+	public int getVentasRefresco() {
+		return ventasRefresco;
+	}
+
+	public void setVentasRefresco(int ventasRefresco) {
+		this.ventasRefresco = ventasRefresco;
 	}
 	
 	
