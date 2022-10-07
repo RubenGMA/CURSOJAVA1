@@ -11,6 +11,7 @@ public class Maquina {
 	private int cambios;
 	private Refresco[] refrescos;
 	private int ventasTotal;
+	
 	//constructor
 	public Maquina() {
 		super();
@@ -38,8 +39,8 @@ public class Maquina {
 		}
 	}
 	
-	public void mostrarInformeVentas() {
-		
+	public int mostrarInformeVentas() {
+		return this.ventasTotal;
 	}
 	
 	public boolean comprobarSiAgotado(Refresco r) {
