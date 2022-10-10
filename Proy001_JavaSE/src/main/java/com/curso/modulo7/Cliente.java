@@ -19,12 +19,12 @@ final class ClienteVIP extends Cliente{
 	}
 	
 	//no se puede
-	@Override
-	public void hazAlgo() {
-		super.hazAlgo();
-	}
+//	@Override
+//	public void hazAlgo() {
+//		super.hazAlgo();
+//	}
 }
 
 //no se pued ehacer herencia de una clase final
-class ClienteExtrVip extends ClienteVIP{
-}
+//class ClienteExtrVip extends ClienteVIP{
+//}
