@@ -29,5 +29,6 @@ public class PruebaEmpleado {
 		//carlos tiene forma empleado por lo tanto solo permite
 		//acceder a los atributos y metodos de empleado
 		
+		
 	}
 }
