@@ -1,5 +1,9 @@
 package com.expendedora.domain;
-
+/**
+ * 
+ * @author RubenG
+ *
+ */
 public class Refresco {
 	//atributos
 	String sabor = "";

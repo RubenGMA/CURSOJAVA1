@@ -1,5 +1,9 @@
 package com.mybank.domain;
-
+/**
+ * 
+ * @author RubenG
+ *
+ */
 public class Account {
 
 	//atributos

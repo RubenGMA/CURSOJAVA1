@@ -2,7 +2,7 @@ package com.expendedora.domain;
 
 /**
  * Maquina de refrescos con capacidad de 5 tipos de refresco diferente y 100 centimos en cambios
- * @author ALUMNO
+ * @author RubenG
  *
  */
 public class Maquina {

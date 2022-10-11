@@ -1,5 +1,9 @@
 package com.mybank.pruebas;
-
+/**
+ * 
+ * @author RubenG
+ *
+ */
 import com.mybank.domain.Account;
 import com.mybank.domain.Customer;
 
