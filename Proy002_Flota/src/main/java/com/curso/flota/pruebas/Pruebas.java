@@ -1,12 +1,13 @@
 package com.curso.flota.pruebas;
 
+import com.curso.flota.dominio.Camion;
 import com.curso.flota.dominio.Vehiculo;
 
 public class Pruebas {
 	
 	public static void main(String[] args) {
 		
-		Vehiculo camion = new Vehiculo("2345JJJ", 500.10);
+		Vehiculo camion = new Camion("2345JJJ", 500.10);
 //		camion.cargaMaxima = 555.25; //atributo cargaMaxima es public
 		
 		try {

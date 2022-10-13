@@ -8,19 +8,19 @@ package com.curso.flota.dominio;
  * @version 1.0
  *
  */
-public class Vehiculo {
+public abstract class Vehiculo {
 	
 	//atributos
 	private double cargaMaxima = 2000;
-	private double cargaActual = 0.0;
+	protected double cargaActual = 0.0;
 	private String matricula = "";
-	private int numCajas = 0;
+	protected int numCajas = 0;
 	
 	//asi por convenio se declara una constante:
 	//public final double CARGA_MAXIMA_POR_DEFECTO = 5222.78;
 	
 	//constructores
-	public Vehiculo(String matricula, double cargaMaxima) {
+	protected Vehiculo(String matricula, double cargaMaxima) {
 		//validar matricula no null para que sea robusto
 		//validar carga maxima > 0
 		this.matricula = matricula;
@@ -78,5 +78,7 @@ public class Vehiculo {
 	public int getNumCajas() {
 		return numCajas;
 	}
+	
+	public abstract double consumofuel();
 
 }
