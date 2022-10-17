@@ -55,6 +55,8 @@ public class EjemplosMap {
 			System.out.println(clave + " " + figura.get(clave));
 		}
 		
+		
+	
 		//--------
 		
 		//HashMap		-Recorro la coleccion a traves de key o orden
