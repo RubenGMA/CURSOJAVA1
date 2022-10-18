@@ -15,7 +15,7 @@
   </head>
   <body>
     <h1>TIENDA ONLINE</h1>
-	<a class="btn btn-primary" href="#" role="button">Ver Lista Productos</a>
+	<a class="btn btn-primary" href="lista-productos.jsp" role="button">Ver Lista Productos</a>
 	<a class="btn btn-primary" href="alta-producto.jsp" role="button">Alta de producto</a>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

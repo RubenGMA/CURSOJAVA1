@@ -4,4 +4,18 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+  	<servlet-name>AltaProductoServlet</servlet-name>
+  	<display-name>AltaProductoServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.curso.mercado.web.AltaProductoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>AltaProductoServlet</servlet-name>
+  	<url-pattern>/altaproducto</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>AltaProductoServlet</servlet-name>
+  	<url-pattern>/zzz</url-pattern>
+  </servlet-mapping>
 </web-app>

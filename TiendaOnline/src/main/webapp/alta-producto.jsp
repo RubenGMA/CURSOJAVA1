@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ page isELIgnored="false" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,21 +14,26 @@
 <title>Alta Producto</title>
 </head>
 <body>
+<div class="col-auto">
 	<h1>ALTA PRODUCTO</h1>
 	<h4>Alta de un producto nuevo</h4>
-
-	<form class="row g-3" action="AltaServlet" method="post">
+	<div class="col-auto"> 
+	<form class="row g-3" action="altaproducto" method="post">
 		<div class="col-auto">
 			<label for="nombreProducto" class="">Nombre Producto:</label> 
-			<input type="text" id="nombreProducto" value="">
-		</div>
-		
-		<div class="col-auto">
+			<input type="text" name="nombreProducto" id="nombreProducto" value="">
+			<br>
+			<label for="precioUnidad" class="">Precio Producto:</label> 
+			<input type="text" name="precioUnidad" id="precioProducto" value="">			
+			<br>
 			<button type="submit" class="btn btn-primary mb-3">Confirm</button>
-		</div>
+		</div>	
 	</form>
-
-
+	<div class="border">
+		${requestScope.error}
+	</div>
+	</div>
 	<a class="btn-link" href="index.jsp" role="button">Volver</a>
+</div>
 </body>
 </html>
