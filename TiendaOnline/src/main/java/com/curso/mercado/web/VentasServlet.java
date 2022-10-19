@@ -27,16 +27,21 @@ public class VentasServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//leer parametro que reciben el idproducto
 		String paramId = request.getParameter("idProducto");
-		int idProductoComprar = 0;
+		String paramCantidad = request.getParameter("cantidad");
+		
+		int idProductoComprar = -1;
 		if(paramId != null) {
 			idProductoComprar = Integer.parseInt(paramId); //falta controlar excepcion
 		}
 		//comprar 1 unidad
-		
+		int cantidad = 1;
+		if(paramCantidad != null ) {
+			cantidad = Integer.parseInt(paramCantidad);
+		}
 		VentasService servicio = new VentasService();
 		String mensaje = "";
 		try {
-			servicio.comprarProducto(idProductoComprar, 1);
+			servicio.comprarProducto(idProductoComprar, cantidad);
 			//COMPRA OK
 			mensaje = "Has comprado una unidad de " + idProductoComprar ;
 			//volver a la lista
