@@ -16,29 +16,28 @@
 </head>
 <body>
 	<h1>Login</h1>
-	<form class="row g-3" action="altaproducto" method="post">
+	<form class="row g-3" action="login" method="post">
 		<div class="col-auto">
 
 			<div>
 				<label for="nombre" class="col-sm-2 col-form-label">Nombre</label>
 				<div class="col-sm-10">
-					<input type="" class="form-control" id="nombre" value="">
+					<input type="text" class="form-control" id="nombre" name="nombre" value="">
 				</div>
 			</div>
 			<div>
 				<label for="rol" class="col-sm-2 col-form-label">Rol</label>
 				<div class="col-sm-10">
-					<select class="form-select" aria-label="Default select example">
+					<select class="form-select" id="rol" name="rol" aria-label="Default select example">
 						<option selected>Open this select menu</option>
-						<option value="1">One</option>
-						<option value="2">Two</option>
-						<option value="3">Three</option>
+						<option value="Administrador">Administrador</option>
+						<option value="Cliente">Cliente</option>						
 					</select>
 				</div>
 			</div>
 			<br>
 			<div class="col-sm-10">
-				<button type="submit" class="btn btn-primary mb-3">Confirm</button>
+				<button type="submit" class="btn btn-primary mb-3">Login</button>
 			</div>
 
 		</div>

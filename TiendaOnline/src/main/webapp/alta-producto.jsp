@@ -16,6 +16,7 @@
 <body>
 <div class="col-auto">
 	<h1>ALTA PRODUCTO</h1>
+	<div> usuario: ${sessionScope.usuario.nombre }</div>
 	<h4>Alta de un producto nuevo</h4>
 	<div class="col-auto"> 
 	<form class="row g-3" action="altaproducto" method="post">

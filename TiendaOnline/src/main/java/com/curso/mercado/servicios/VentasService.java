@@ -11,11 +11,13 @@ public class VentasService {
 	private GenericDAO<Producto> productDAO = new ProductoInMemoryDAO();
 	
 	public void comprarProducto(int id, int cantidad) throws VentasException{
+		
 		//caso1 si comprar un producto que no existe lanzo una excepcion.
 		Producto pAVender = productDAO.getByID(id);
 		if (productDAO.getByID(id) == null) {
 			throw new VentasException("No esxiste el producto con id: " + id);
 		}
+		
 		//caso 2 no hay stock suficiente
 		if(pAVender.getStock() < cantidad) {
 			throw new VentasException("No hay stock suficiente");

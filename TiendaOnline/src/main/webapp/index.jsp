@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+<%@ page isELIgnored="false"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 
 <html lang="es">
@@ -14,9 +16,16 @@
     <title>Tienda Online</title>
   </head>
   <body>
-    <h1>TIENDA ONLINE</h1>
+    <h1>TIENDA ONLINE ${applicationScope.tituloTienda }</h1>
+    
+    <div> usuario: ${sessionScope.usuario.nombre }</div>
+    <div> rol: ${sessionScope.usuario.rol }</div>
 	<a class="btn btn-primary" href="lista-productos.jsp" role="button">Ver Lista Productos</a>
-	<a class="btn btn-primary" href="alta-producto.jsp" role="button">Alta de producto</a>
+	
+	<c:if test="${sessionScope.usuario.rol == 'Administrador' }">
+		<a class="btn btn-primary" href="alta-producto.jsp" role="button">Alta de producto</a>
+	</c:if>
+	
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
