@@ -28,6 +28,5 @@ public class VentasService {
 	
 	public List<Producto> listaProductoVenta(){
 		return productDAO.getAll();
-	}
-	
+	}	
 }

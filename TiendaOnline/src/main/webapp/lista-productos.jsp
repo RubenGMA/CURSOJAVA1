@@ -19,12 +19,19 @@
 <body>
 	<h1>Tienda Online</h1>
 	<div> usuario: ${sessionScope.usuario.nombre }</div>
-	<h4>Lita de productos</h4>
-	<a href="comprar?id=${producto.idProducto}"></a>
+	<h4>Lista de productos</h4>
+	<div class="border border-warning">
+	${requestScope.mensaje}
+	</div>
 	<ul>
+	
 	<c:forEach var="producto" items="${requestScope.lista}">
-		<li>${producto.idProducto} - ${producto.descripcion}  <button type="button" class="btn btn-danger btn-sm" ></button></li> 
+		<li>${producto.idProducto} - ${producto.descripcion} - ${producto.stock} -${producto.precio} 
+		<a href="comprar?idProducto=${producto.idProducto}">comprar</a>
+		</li>
+		
 	</c:forEach>
+	
 	</ul>
 </body>
 </html>

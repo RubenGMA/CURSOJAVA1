@@ -24,6 +24,12 @@
   	<description></description>
   	<servlet-class>com.curso.mercado.web.VentasServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>ListaProductosServlet</servlet-name>
+  	<display-name>ListaProductosServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.curso.mercado.web.ListaProductosServlet</servlet-class>
+  </servlet>
   
   <servlet-mapping>
   	<servlet-name>AltaProductoServlet</servlet-name>
@@ -36,8 +42,13 @@
   </servlet-mapping>
   <servlet-mapping>
   	<servlet-name>VentasServlet</servlet-name>
-  	<url-pattern>/VentasServlet</url-pattern>
+  	<url-pattern>/comprar</url-pattern>
   </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ListaProductosServlet</servlet-name>
+  	<url-pattern>/listaproductos</url-pattern>
+  </servlet-mapping>
+ 
   
   <welcome-file-list>
   	<welcome-file>login.jsp</welcome-file>

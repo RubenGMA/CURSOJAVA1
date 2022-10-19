@@ -20,7 +20,7 @@
     
     <div> usuario: ${sessionScope.usuario.nombre }</div>
     <div> rol: ${sessionScope.usuario.rol }</div>
-	<a class="btn btn-primary" href="lista-productos.jsp" role="button">Ver Lista Productos</a>
+	<a class="btn btn-primary" href="listaproductos" role="button">Ver Lista Productos</a>
 	
 	<c:if test="${sessionScope.usuario.rol == 'Administrador' }">
 		<a class="btn btn-primary" href="alta-producto.jsp" role="button">Alta de producto</a>

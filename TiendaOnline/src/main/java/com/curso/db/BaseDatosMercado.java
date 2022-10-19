@@ -25,12 +25,10 @@ public class BaseDatosMercado {
 	
 	static {
 		tablaProducto = new TreeMap<Integer, Producto>();
-		tablaProducto.put(contador++, new Producto(contador,"Libro Recetas",30.0));
-		tablaProducto.put(contador++, new Producto(contador,"Jarrón chino",340.0));
-		tablaProducto.put(contador++, new Producto(contador,"Lapiz",3.0));
-		tablaProducto.put(contador++, new Producto(contador,"Lapiz2",3.0));
-		tablaProducto.put(contador++, new Producto(contador,"Lapiz3",3.0));
-		tablaProducto.put(contador++, new Producto(contador,"Lapiz4",3.0));
+		tablaProducto.put(contador, new Producto(contador,"Libro Recetas",30.0));contador++;
+		tablaProducto.put(contador, new Producto(contador,"Jarrón chino",340.0));contador++;
+		tablaProducto.put(contador, new Producto(contador,"Lapiz",3.0));contador++;
+		tablaProducto.put(contador, new Producto(contador,"Cuaderno",15.0));contador++;
 	}
 	
 	private BaseDatosMercado() {
