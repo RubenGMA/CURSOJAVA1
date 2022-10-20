@@ -12,6 +12,6 @@
   </servlet>
   <servlet-mapping>
   	<servlet-name>ListaClientesServlet</servlet-name>
-  	<url-pattern>/ListaClientesServlet</url-pattern>
+  	<url-pattern>/listaclientes</url-pattern>
   </servlet-mapping>
 </web-app>
