@@ -29,7 +29,7 @@
 				<a href="comprar?idProducto=${producto.idProducto}">comprar</a>
 			</li>		
 		</c:forEach>
-	</ul>
+	</ul>	
 	<form>
 		Producto:
 		<select name="idProducto">

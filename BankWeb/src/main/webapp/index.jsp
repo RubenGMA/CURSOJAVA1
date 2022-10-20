@@ -10,11 +10,12 @@
 </head>
 <body> 
 <h1>Lista Clientes</h1>
+<button class="btn btn-primary" href="ListaClientesServlet" role="button">Ver Lista de clientes</button>
 	<ul>
-		<c:forEach var="cliente" items="${requestScope.lista}">
+		<c:forEach var="customer" items="${requestScope.lista}">
 			<li>
-				${cliente.firstName}
-				<a href="cuentas?iCliente=${cliente.firstName}">Ver cuentas</a>
+				${customer.firstName}, ${customer.lastName}
+				<a href="cuentas?customer=${customer.firstName}">Ver cuentas</a>
 			</li>
 		</c:forEach>
 	</ul>
