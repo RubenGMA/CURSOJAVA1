@@ -1,6 +1,7 @@
 package com.curso.mercado.persistencia;
 
 
+import java.lang.reflect.UndeclaredThrowableException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +19,22 @@ public class ProductoDBDAO implements GenericDAO<Producto>{
 	@Override
 	public void add(Producto entidad) {
 			
+			try {
+				int newID = this.getUltimoIdProducto()+1;
+				String insertar = "INSERT INTO HR.PRODUCTOS "+
+						"(ID_PRODUCTO, DESCRIPCION, PRECIO, STOCK) "+
+						"VALUES (?,?,?,?)";
+				PreparedStatement ps = con.prepareStatement(insertar);
+				ps.setInt(1, newID);
+				ps.setString(2, entidad.getDescripcion());
+				ps.setDouble(3, entidad.getPrecio());
+				ps.setInt(4, entidad.getStock());
+				ps.executeUpdate();
+				System.out.println("grabó ok el producto");
+			} catch (Exception e) {
+				e.printStackTrace();
+				throw new RuntimeException("No se pudo crear producto" + e.getMessage(),e);
+			}
 	}
 
 	@Override
@@ -44,7 +61,7 @@ public class ProductoDBDAO implements GenericDAO<Producto>{
 			throw new RuntimeException(
 					"DB JDBC API." + e.getMessage(), e);					
 		}
-		return null;
+		return productos;
 	}
 
 	@Override
@@ -61,6 +78,22 @@ public class ProductoDBDAO implements GenericDAO<Producto>{
 	@Override
 	public void update(Producto entidad) {
 				
+	}
+	
+	private int getUltimoIdProducto() {
+		String consulta = "SELECT max(ID_PRODUCTO) FROM HR.PRODUCTOS";
+		try {
+			ResultSet rs = con.createStatement().executeQuery(consulta);
+			if(rs.next()) {
+				return rs.getInt(1);
+			}else {
+				return 0;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new RuntimeException("No pudo cargar el ultimo id");
+		}
+		
 	}
 
 }
