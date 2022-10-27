@@ -14,6 +14,8 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
+
+import com.curso.JPA.entidades.Departamento;
 import com.curso.JPA.entidades.Empleado;
 
 public class PruebaConsultasJPA {
@@ -32,12 +34,12 @@ public class PruebaConsultasJPA {
 //		Query consulta = em.createQuery("SELECT d FROM Departamento d WHERE d.idManager IS NULL");
 //		List<Departamento> lista = consulta.getResultList();
 //		System.out.println("Lista departamentos");
-		
+//		
 //		for(Departamento d2 : lista) {
 //			System.out.println(d2);
 //		}
-		
-//		//MODO 2 - NAMED QUERY
+//		
+////		//MODO 2 - NAMED QUERY
 //		Query consulta2 = em.createNamedQuery("Departamento.findAll");//las consultas (namedquery) estan en la clase departamento
 //		List<Departamento> lista2 = consulta2.getResultList();
 //		System.out.println("Lista departamentos con Named Query");
@@ -116,18 +118,20 @@ public class PruebaConsultasJPA {
 		//OR JOBID = 'AD_ASST'
 		
 		
-		////// codigo sin copiar de Bego, cogerl del git
+		Predicate todosAnd = cb.and(condiciones.toArray(new Predicate[0]));
+		Predicate job = cb.equal(empleado.get("idTrabajo"), "AD_ASST");
+		Predicate whereFinal = cb.or(todosAnd,job);
 		
-		
+		cq.where(whereFinal);		
 		
 		//definir el WHERE
-		if(condiciones.size()>0) {
-			//convertir Arraylist en un array de Predicate
-//			Predicate[] condicionesFinal = new Predicate[condiciones.size()];
-//			condiciones.toArray(condicionesFinal);
-//			cq.where(condicionesFinal);
-			cq.where(condiciones.toArray(new Predicate[0]));
-		}
+//		if(condiciones.size()>0) {
+//			//convertir Arraylist en un array de Predicate
+////			Predicate[] condicionesFinal = new Predicate[condiciones.size()];
+////			condiciones.toArray(condicionesFinal);
+////			cq.where(condicionesFinal);
+//			cq.where(condiciones.toArray(new Predicate[0]));
+//		}
 		
 		//Ejecutar la consulta
 		Query qCriteria = em.createQuery(cq);
