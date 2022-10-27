@@ -33,6 +33,9 @@
 		<class>com.curso.JPA.entidades.Record</class>
 		<class>com.curso.JPA.entidades.Order</class>
 		
+		<!-- Todas las  clases con la notacion @Entity forman parte de esta unidad de persistencia -->
+		<exclude-unlisted-classes>false</exclude-unlisted-classes>
+		
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver" />
 			<property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@localhost:49161:xe" />

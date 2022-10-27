@@ -8,6 +8,7 @@ import javax.persistence.Persistence;
 
 import com.curso.JPA.entidades.Empleado;
 import com.curso.JPA.entidades.Trabajo;
+import com.curso.JPA.entidades.Departamento;
 
 public class PruebasEmpleado {
 	public static void main(String[] args) {
@@ -33,7 +34,10 @@ public class PruebasEmpleado {
 		eNuevo.setNombre("lolo");
 		eNuevo.setApellidos("Perez");
 		eNuevo.setFechaContratacion(new Date());
-		eNuevo.setIdDepartamento(10);
+		Departamento d = new Departamento();
+		d.setId(10);
+		eNuevo.setDepartamento(d);	
+		
 		eNuevo.setIdTrabajo("ST_MAN");
 		eNuevo.setEmail("luis@gmail.es");
 		
