@@ -53,6 +53,7 @@ public class PriebasCriteria {
 			condicionFinal = condicionManager;
 		}
 		
+		
 		// WHERE
 		if (condicionFinal != null)
 			cq.where(condicionFinal);
