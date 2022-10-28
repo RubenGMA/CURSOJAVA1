@@ -6,7 +6,7 @@
 	<!--  otra unidad persistenci para ir HR de oracle -->
 	<persistence-unit name="OracleHRPU" transaction-type="RESOURCE_LOCAL">
 		
-		
+		<class>com.curso.mercado.entidades.Producto</class>
 			
 		<!-- Todas las  clases con la notacion @Entity forman parte de esta unidad de persistencia -->
 		<exclude-unlisted-classes>false</exclude-unlisted-classes>
