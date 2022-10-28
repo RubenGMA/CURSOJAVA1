@@ -19,10 +19,11 @@ public class ProductoJPADAO implements GenericDAO<Producto> {
 		factory = Persistence.createEntityManagerFactory("OracleHRPU");
 	}
 	
-	EntityManager em = factory.createEntityManager();
+	
 	
 	@Override
 	public void add(Producto p) {
+		EntityManager em = factory.createEntityManager();
 		try {
 			em.getTransaction().begin(); 
 			em.persist(p); 
@@ -37,6 +38,7 @@ public class ProductoJPADAO implements GenericDAO<Producto> {
 
 	@Override
 	public List<Producto> getAll() {
+		EntityManager em = factory.createEntityManager();
 		Query consulta = em.createQuery("SELECT p FROM Producto p");
 		List<Producto> lista = consulta.getResultList();
 		System.out.println("Se ha mostrado la lista con JPA");

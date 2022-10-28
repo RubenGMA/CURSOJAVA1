@@ -15,7 +15,7 @@ import com.curso.mercado.entidades.Usuario;
 import com.curso.mercado.persistencia.ProductoJPADAO;
 
 //@WebServlet(urlPatterns = "login", loadOnStartup = 1)
-@WebServlet(urlPatterns = "login",loadOnStartup = 1)
+
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
