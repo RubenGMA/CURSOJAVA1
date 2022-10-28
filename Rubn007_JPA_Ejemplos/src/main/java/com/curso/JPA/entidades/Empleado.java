@@ -15,9 +15,9 @@ public class Empleado implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "CUST_SEQ")
 	@SequenceGenerator(sequenceName = "EMPLOYEES_SEQ", name = "CUST_SEQ", allocationSize=1)
+	
 	@Column(name = "EMPLOYEE_ID")
 	private Long id;
-
 	@Column(name = "FIRST_NAME")
 	private String nombre;
 	@Column(name = "LAST_NAME")

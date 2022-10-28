@@ -12,9 +12,10 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.curso.mercado.entidades.Usuario;
+import com.curso.mercado.persistencia.ProductoJPADAO;
 
 //@WebServlet(urlPatterns = "login", loadOnStartup = 1)
-
+@WebServlet(urlPatterns = "login",loadOnStartup = 1)
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -31,8 +32,12 @@ public class LoginServlet extends HttpServlet {
     	// es para todos los usuarios/paginas/servlets etc
     	System.out.println(".... ServletContext" + config.getServletContext());
     	config.getServletContext().setAttribute("tituloTienda", "LAS MARAVILLAS");
+    	
+    	//PRUEBA
+    	System.out.println("probando si esta bien la configuracion de persistencia");
+    	new ProductoJPADAO();
     }
-
+    
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());

@@ -3,11 +3,30 @@ package com.curso.mercado.entidades;
 import java.io.Serializable;
 import java.util.Objects;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "PRODUCTOS")
 public class Producto implements Serializable{
 	
+	 private static final long serialVersionUID = 1L;
+	 @Id
+	 @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "PRODUCTO_SEQ")
+	 @SequenceGenerator(sequenceName = "PRODUCTO_SEQ", name = "PRODUCTO_SEQ", allocationSize=1)
+	    
+	@Column(name = "ID_PRODUCTO")
 	private Integer idProducto;
+	@Column(name = "DESCRIPCION")
 	private String descripcion;
+	@Column(name = "PRECIO")
 	private double precio;
+	@Column(name = "STOCK")
 	private int stock = 5;
 	
 	
@@ -87,9 +106,5 @@ public class Producto implements Serializable{
 		Producto other = (Producto) obj;
 		return Objects.equals(idProducto, other.idProducto);
 	}
-	
-	
-	
-
 }
 
