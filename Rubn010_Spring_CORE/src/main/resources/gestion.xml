@@ -7,7 +7,10 @@
 		
 		<!-- trabaja con anotaciones -->
 		<context:annotation-config></context:annotation-config>
+		
 		<!-- busque todas las clases que tienen anotaciones desde el paquete -->
-        <context:component-scan base-package="com.curso.spring.ejemplo002"></context:component-scan>
+        <context:component-scan base-package="com.curso.spring.practica001"></context:component-scan>
+        
+        
         
 </beans>
