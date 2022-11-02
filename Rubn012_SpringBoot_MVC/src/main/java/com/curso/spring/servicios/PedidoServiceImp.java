@@ -1,5 +1,7 @@
 package com.curso.spring.servicios;
 
+import java.util.Collection;
+
 import javax.annotation.PostConstruct;
 
 import org.slf4j.Logger;
@@ -21,7 +23,7 @@ public class PedidoServiceImp implements PedidosService {
 	private static Logger log = LoggerFactory.getLogger(PedidoServiceImp.class);
 	
 	@Autowired
-	@Qualifier("pedidoRepoJPA")
+	@Qualifier("pedidoRepo")
 	private PedidoRepository repo;
 	
 	
@@ -42,6 +44,12 @@ public class PedidoServiceImp implements PedidosService {
 		repo.add(p);
 		// inventariorepo.update(inventario);
 		
+	}
+
+	@Override
+	public Collection<Pedido> getPedidos(String user) {
+		log.info("usuario pedidoServive" + user);
+		return repo.getPedidosByUser(user);
 	}
 
 }

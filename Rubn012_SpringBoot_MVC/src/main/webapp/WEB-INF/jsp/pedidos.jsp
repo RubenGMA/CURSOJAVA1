@@ -7,14 +7,15 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Inicio</title>
+<title>Pedidos</title>
 </head>
 <body>
-
-	<h2>Bienvenido ${ usuario.nombre }</h2>
-	
-	
-	<a href="pedidos">Lista</a>
-	
+	<h2>Bienvenido ${usuario.nombre}</h2>
+	<h2>Lista de pedidos</h2>
+	<ul>
+		<c:forEach items="${listaPedidos}" var="pedido">
+			<li>${pedido.id} - ${pedido.desc}</li>
+		</c:forEach>
+	</ul>
 </body>
 </html>

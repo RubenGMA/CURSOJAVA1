@@ -1,5 +1,7 @@
 package com.curso.spring.repositorio;
 
+import java.util.Collection;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -16,5 +18,11 @@ public class PedidoJPARepositoryImp implements PedidoRepository {
 	@Override
 	public void add(Pedido pedido) {
 		log.info("... Grabar pedido con JPA");
+	}
+
+	@Override
+	public Collection<Pedido> getPedidosByUser(String user) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
