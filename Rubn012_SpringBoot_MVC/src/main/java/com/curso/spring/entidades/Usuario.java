@@ -3,16 +3,66 @@ package com.curso.spring.entidades;
 import java.io.Serializable;
 import java.util.Objects;
 
+import javax.validation.constraints.Size;
+import javax.validation.constraints.NotNull;
+
+
+
 public class Usuario implements Serializable{
+	
+
+	@NotNull
+	@Size(min=2, max=20)
 	private String nombre;
+	
+	@NotNull
+	@Size(min=5)
 	private String clave;
+	
 	private String rol;
 	
+	public Usuario() {
+		// TODO Auto-generated constructor stub
+	}
 	
+
+	public Usuario(@NotNull @Size(min = 2, max = 20) String nombre, @NotNull @Size(min = 5) String clave, String rol) {
+		super();
+		this.nombre = nombre;
+		this.clave = clave;
+		this.rol = rol;
+	}
+
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public String getClave() {
+		return clave;
+	}
+
+	public void setClave(String clave) {
+		this.clave = clave;
+	}
+
+	public String getRol() {
+		return rol;
+	}
+
+	public void setRol(String rol) {
+		this.rol = rol;
+	}
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(nombre);
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -24,32 +74,13 @@ public class Usuario implements Serializable{
 		Usuario other = (Usuario) obj;
 		return Objects.equals(nombre, other.nombre);
 	}
-	public Usuario() {
-		super();
-	}
-	public Usuario(String nombre, String clave, String rol) {
-		super();
-		this.nombre = nombre;
-		this.clave = clave;
-		this.rol = rol;
-	}
-	public String getNombre() {
-		return nombre;
-	}
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-	public String getClave() {
-		return clave;
-	}
-	public void setClave(String clave) {
-		this.clave = clave;
-	}
-	public String getRol() {
-		return rol;
-	}
-	public void setRol(String rol) {
-		this.rol = rol;
+
+	@Override
+	public String toString() {
+		return "Usuario [nombre=" + nombre + ", clave=" + clave + ", rol=" + rol + "]";
 	}
 	
+	
+	
+
 }

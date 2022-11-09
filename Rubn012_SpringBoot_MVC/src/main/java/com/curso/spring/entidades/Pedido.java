@@ -3,18 +3,46 @@ package com.curso.spring.entidades;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.Objects;
-// serializable es importante para que, si es un atributo puede serializarse y enviarse de la RAM al disco duro
+
+import javax.persistence.*;
+import org.springframework.lang.NonNull;
+
+@Entity
+@Table(name="PEDIDOS")
+//@NamedQueries({
+//	@NamedQuery(name="Pedido.findAll", 
+//			    query = "SELECT p FROM Pedido p"),
+//	@NamedQuery(name="Pedido.findbyIdUsuario", 
+//    query = "SELECT p FROM Pedido p WHERE p.user = :usuarioNombre")
+//	
+//})
 public class Pedido implements Serializable{
-	
-	private Integer id;
-	private String user;
-	private String desc;
-	private Date fechaPedido;
-	private boolean entregado;
-	
-	public Pedido() {
-		
-	}
+
+	 @Id
+	 @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "PED_SEQ")
+	 @SequenceGenerator(sequenceName = "PEDIDO_SEQ", name = "PED_SEQ", allocationSize=1)	
+	 private Integer id;
+	 
+	 @Column(name="USUARIO")
+	 private String  user;
+
+	 
+	 
+	 @Column(name="DESCRIPCION")
+	 @NonNull
+	 private String desc;
+	 
+	 @Temporal(TemporalType.TIMESTAMP)
+	 @Column(name="FECHA_PEDIDO")
+	 private Date fechaPedido;
+	 
+	 
+	 @Column(name="ENTREGADO")
+	 private boolean entregado;
+
+	 
+	 public Pedido() {}
+
 
 	public Pedido(Integer id, String user, String desc, Date fechaPedido, boolean entregado) {
 		super();
@@ -25,37 +53,46 @@ public class Pedido implements Serializable{
 		this.entregado = entregado;
 	}
 
+
 	public Integer getId() {
 		return id;
 	}
+
 
 	public void setId(Integer id) {
 		this.id = id;
 	}
 
+
 	public String getUser() {
 		return user;
 	}
+
 
 	public void setUser(String user) {
 		this.user = user;
 	}
 
+
 	public String getDesc() {
 		return desc;
 	}
+
 
 	public void setDesc(String desc) {
 		this.desc = desc;
 	}
 
+
 	public Date getFechaPedido() {
 		return fechaPedido;
 	}
 
+
 	public void setFechaPedido(Date fechaPedido) {
 		this.fechaPedido = fechaPedido;
 	}
+
 
 	public boolean isEntregado() {
 		return entregado;
@@ -65,14 +102,11 @@ public class Pedido implements Serializable{
 		this.entregado = entregado;
 	}
 
-	
-
-	
-
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
 	}
+
 
 	@Override
 	public boolean equals(Object obj) {
@@ -86,11 +120,14 @@ public class Pedido implements Serializable{
 		return Objects.equals(id, other.id);
 	}
 
+
 	@Override
 	public String toString() {
 		return "Pedido [id=" + id + ", user=" + user + ", desc=" + desc + ", fechaPedido=" + fechaPedido
 				+ ", entregado=" + entregado + "]";
 	}
-	
+	 
+	 
+	 
 	
 }

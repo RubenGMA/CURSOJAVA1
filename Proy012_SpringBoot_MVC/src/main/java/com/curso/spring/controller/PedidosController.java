@@ -62,7 +62,7 @@ public class PedidosController {
 		if(id.isEmpty()) {  // idPedido == null
 			return "redirect:/pedidos";
 		}
-		Pedido p = pedidoService.getPedido(idPedido);
+		Optional<Pedido> p = pedidoService.getPedido(idPedido);
 		model.addAttribute("pedido", p);
 		return "detalle-pedido";
 	}

@@ -1,8 +1,10 @@
 package com.curso.spring.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import javax.validation.Valid;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,35 +16,44 @@ import com.curso.spring.entidades.Usuario;
 @Controller
 @SessionAttributes("usuario")
 public class LoginController {
-
-//	@Autowired
-//	private LoginService loginservice; //para pedir a base de datos el loging
-
-	// FORMULARIO en el qe pido usuario y clave
+	
+	//@Autowired
+	//private LoginService loginService;
+	
+	//formulario en el que pido usuario y clave
 	@GetMapping("/login")
 	public String loginPage(Model model) {
-		model.addAttribute("usuario", new Usuario());
+		model.addAttribute("usuarioForm", new Usuario());
 		return "login";
 	}
-
-	// Para recoger los datos del formulario. en LoginController
-//	@PostMapping("/login")
-//	public String irAHome(Model model, 
-//						@RequestParam String nombre, 
-//						@RequestParam String clave) 
-//	{
-//				
-//		//boolean valido = loginService.validaLog(nombre,clave)
-//		model.addAttribute("nombre", nombre);
-//		return "home";
-//	}
+	
+	//recogo los datos del formulario
 	@PostMapping("/login")
-	public String irAHome(Model model, 
-			@ModelAttribute("usuario") Usuario usuario
+	public String irAHome(
+			Model model,
+			@ModelAttribute("usuarioForm") @Valid Usuario usuario,
+			BindingResult bindingResult
 			) {
+		
+		//ver si pasó la validación
+		if(bindingResult.hasErrors()) {
+			return "login";
+		}
+		
+		
+		 boolean valido = true; // loginService.validaLog(nombre,clave)
+		//TODO  llamara un service para que haga la tare login
+		
+		if(usuario.getNombre().trim().equalsIgnoreCase("LUIS")) {
+			usuario.setRol("cliente");	
+		}else {
+			usuario.setRol("admin");	
+		}
+		if(valido) model.addAttribute("usuario", usuario);
 
-		//boolean valido = loginService.validaLog(nombre,clave)
-		usuario.setRol("cliente");
 		return "home";
 	}
+	
+	
+
 }
